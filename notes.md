@@ -19,3 +19,34 @@ _generics_ - give you a way of defining type-safe data structures in your applic
 
 ## Ch. 2
 
+### Conventions
+
+* Put an `I` in front of the interface name to convey that it's an interface
+* able/ible is often used as a suffix for interfaces. 
+* Ex: `IStorable`
+
+Defining an interface:
+
+```C#
+interface IStorable
+{
+    void Save();
+    void Load();
+}
+```
+
+Implement an interface:
+
+```C#
+class Document : IStorable 
+{
+    void Save () {...}
+    void Load () {...}
+}
+```
+
+> Using interfaces gives you a way to separate out common sets of behavior in your application and then consume them in multiple places, usually between different types of objects. 
+
+* There are built-in C# interfaces
+* You can define custom interfaces
+
