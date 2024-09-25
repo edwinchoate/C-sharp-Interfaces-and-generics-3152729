@@ -82,3 +82,10 @@ ISomeInterface i = mc as ISomeInterface;
 
 i.SomeInterfaceMethod();
 ```
+
+### Multiple Interfaces
+
+```C#
+class MyClass : ISomeInterface, IAnotherInterface {...}
+```
+
