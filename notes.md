@@ -89,3 +89,56 @@ i.SomeInterfaceMethod();
 class MyClass : ISomeInterface, IAnotherInterface {...}
 ```
 
+### Explicit Interface Implementation
+
+Explicit interfaces solve the potential problem of there being a collision between multiple interfaces. Ex: more than one interface has a method with the same name. 
+
+```C#
+// say `MyClass` implements `SomeMethod`
+class MyClass : ISomeInterface, IAnotherInterface 
+{
+    public void SomeMethod () {...}    
+}
+
+// and `ISomeInterface` has `SomeMethod`
+interface ISomeInterface
+{
+    void SomeMethod ();
+}
+
+// and `IAnotherInterface` has `SomeMethod`
+interface IAnotherInterface 
+{
+    void SomeMethod ();
+}
+```
+
+Then you need to explicitly denote which method is which, like this: 
+
+```C#
+class MyClass : ISomeInterface, IAnotherInterface 
+{
+    public void SomeMethod () {...}
+
+    void ISomeInterface.SomeMethod () {...}
+
+    void IAnotherInterface.SomeMethod () {...}
+}
+```
+
+To call the different versions of the methods, you cast to the interface types:
+
+```C#
+static void Main (string[] args) 
+{
+    MyClass obj = new MyClass();
+
+    obj.SomeMethod(); // calls MyClass' SomeMethod
+
+    ISomeInterface i1 = obj as ISomeInterface;
+    i1.SomeMethod(); // calls MyClass' ISomeInterface.SomeMethod
+    
+    IAnotherInterface i2 = obj as IAnotherInterface;
+    i2.SomeMethod(); // calls MyClass' IAnotherInterface.SomeMethod
+}
+```
