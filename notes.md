@@ -142,3 +142,11 @@ static void Main (string[] args)
     i2.SomeMethod(); // calls MyClass' IAnotherInterface.SomeMethod
 }
 ```
+
+### Useful Built-In .NET Interfaces
+
+* `IComparable`, `IComparer` - Used to compare objects of the same type
+* `IDisposable` - Gives callers a way to safely dispose of your object and release resources 
+* `IEquatable` - Used to determine equality of two objects of the same type 
+* `INotifyPropertyChanged` - Broadcast changes to property values on your object [Docs](https://learn.microsoft.com/en-us/dotnet/api/system.componentmodel.inotifypropertychanged?view=net-8.0)
+
