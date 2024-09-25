@@ -1,6 +1,6 @@
 # Notes
 
-## Ch. 1
+## Ch. 1 - Intro
 
 _interfaces_ - provide a way to specific a set of related behaviors that can be used by different classes
     
@@ -17,7 +17,7 @@ _generics_ - give you a way of defining type-safe data structures in your applic
 * Commonly used with collection types 
 * Enforces that data structure only be filled with one type of data
 
-## Ch. 2
+## Ch. 2 - Interfaces
 
 ### Conventions
 
@@ -149,4 +149,10 @@ static void Main (string[] args)
 * `IDisposable` - Gives callers a way to safely dispose of your object and release resources 
 * `IEquatable` - Used to determine equality of two objects of the same type 
 * `INotifyPropertyChanged` - Broadcast changes to property values on your object [Docs](https://learn.microsoft.com/en-us/dotnet/api/system.componentmodel.inotifypropertychanged?view=net-8.0)
+
+## Ch. 3 - Generics
+
+Anti-example: .NET's `ArrayList` 
+
+* `System.Collections.ArrayList` allows data of any type to the list. This can cause problems in the program. 
 
