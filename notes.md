@@ -25,6 +25,8 @@ _generics_ - give you a way of defining type-safe data structures in your applic
 * able/ible is often used as a suffix for interfaces. 
 * Ex: `IStorable`
 
+### Defining Interfaces
+
 Defining an interface:
 
 ```C#
@@ -34,6 +36,10 @@ interface IStorable
     void Load();
 }
 ```
+
+Notice, in an interface definition there are no access modifiers. It's actually a compiler error if you include access modifiers. Interfaces are designed to expose information to other classes so their contents are required to be `public`.
+
+It's not possible to declare member variables in an interface (although, properties essentially accomplish the same thing).
 
 Implement an interface:
 
@@ -49,4 +55,30 @@ class Document : IStorable
 
 * There are built-in C# interfaces
 * You can define custom interfaces
+* You can't use the `new` operator to instantiate interfaces
 
+### Calling Interface Methods
+
+`is` operator - can be used to determine if a given object is an instance of a class or base class.
+
+`as` operator - can be used to perform a cast to an object type. If the cast can be performed, the operation will return an object of the specified type. If the cast cannot be performed, it will return `null`.
+
+```C#
+interface ISomeInterface
+{
+    void SomeInterfaceMethod ();
+}
+
+class MyClass : ISomeInterface {...}
+
+MyClass mc = new MyClass();
+
+// Using the `is` operator to call interface methods
+if (mc is ISomeInterface) 
+    mc.SomeInterfaceMethod();
+
+// Using the `as` operator to call interface methods
+ISomeInterface i = mc as ISomeInterface;
+
+i.SomeInterfaceMethod();
+```
