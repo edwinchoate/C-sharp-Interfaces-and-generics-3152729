@@ -17,10 +17,18 @@ namespace StacksQueues
             sportsStack.Push("Rugby");
 
             // TODO: Let's see how many items are on the stack
+            Console.WriteLine("There are {0} items in the stack", sportsStack.Count);
 
             // TODO: Peek at the top item
+            Console.WriteLine("{0} is at the top of the stack", sportsStack.Peek());
 
             // TODO: Pop 2 items, then try the Contains method
+            sportsStack.Pop();
+            sportsStack.Pop();
+            string query = "Rugby";
+            Console.WriteLine("The stack does {0} contain {1}", sportsStack.Contains(query) ? "" : "not", query);
+
+            Console.WriteLine();
 
             // Create a queue to hold the names of sports
             Queue<string> sportsQueue = new Queue<string>();
@@ -33,14 +41,20 @@ namespace StacksQueues
             sportsQueue.Enqueue("Rugby");
 
             // TODO: Let's see how many items are on the queue
+            Console.WriteLine("There are {0} items in the queue", sportsQueue.Count);
 
             // TODO: Peek at the front item
+            Console.WriteLine("The item in the front of the queue is {0}", sportsQueue.Peek());
 
             // TODO: Dequeue 2 items, then try the Contains method
+            sportsQueue.Dequeue();
+            sportsQueue.Dequeue();
+            query = "Baseball";
+            Console.WriteLine("The queue does {0} contain {1}", sportsQueue.Contains(query) ? "" : "not", query);
 
             // Keep the window open
-            Console.WriteLine("\nPress Enter key to continue...");
-            Console.ReadLine();
+            // Console.WriteLine("\nPress Enter key to continue...");
+            // Console.ReadLine();
         }
     }
 }

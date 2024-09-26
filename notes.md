@@ -238,3 +238,23 @@ Iterate through the list:
 foreach (Person person in people) {...}
 ```
 
+### Stacks and Queues
+
+Stacks
+
+* `Count` 
+* `Clear`
+* `Contains`
+* `Peek` - returns the top item in the stack but does not remove it
+* `Push`
+* `Pop`
+
+Queues
+
+* `Count`
+* `Clear`
+* `Contains`
+* `Peek` - Returns the item in the front of the queue, but does not remove it 
+* `Enqueue` - adds a new item to the end of the queue
+* `Dequeue` - remove the front item from the queue
+
