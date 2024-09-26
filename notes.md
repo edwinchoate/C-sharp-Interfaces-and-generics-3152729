@@ -177,3 +177,64 @@ list.Add(1);
 list.Add("two");
 ```
 
+### [System.Collections.Generic](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic?view=net-8.0)
+
+#### Classes
+* `Dictionary<TKey, TValue>`
+* `HashSet<T>`
+* `LinkedList<T>`
+* `List<T>`
+* `PriorityQueue<TElement, TPriority>`
+* `Queue<T>`
+* `SortedDictionary<TKey, TValue>`
+* `SortedList<TKey, TValue>`
+* `SortedSet<T>`
+* `Stack<T>`
+* and more
+
+#### Interfaces
+* `IEnumerable<T>`
+* `IAsyncEnumerable<T>`
+* `IEnumerator<T>`
+* `ICollection<T>`
+* `IEqualityComparer<T>`
+* and more 
+
+### Using Lists
+
+Creating a new list:
+
+```C#
+List<Person> people = new List<Person>();
+```
+
+Adding items to the list: 
+
+```C#
+people.Add(new Person("Bob", "Smith"));
+```
+
+Get the length of the list: 
+
+```C#
+int headcount = people.Count();
+```
+
+See if an item is in the list:
+
+```C#
+if (people.Exists((p) => p.FirstName == "Bob"))
+```
+
+Find an item in the list: 
+
+```C#
+Person bob = people.Find((p) => p.FirstName == "Bob");
+```
+
+Iterate through the list:
+
+```C#
+foreach (Person person in people) {...}
+```
+
