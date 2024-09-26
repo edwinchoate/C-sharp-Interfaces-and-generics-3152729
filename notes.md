@@ -156,3 +156,24 @@ Anti-example: .NET's `ArrayList`
 
 * `System.Collections.ArrayList` allows data of any type to the list. This can cause problems in the program. 
 
+```C#
+ArrayList arrayList = new ArrayList();
+arrayList.Add(1);
+arrayList.Add("two");
+```
+
+The above code compiles, but, at runtime...
+
+```bash
+$ dotnet run
+Unhandled exception. System.InvalidCastException: Unable to cast object of type 'System.String' to type 'System.Int32'...
+```
+
+By contrast, this won't compile:
+
+```C#
+List<int> list = new List<int>();
+list.Add(1);
+list.Add("two");
+```
+

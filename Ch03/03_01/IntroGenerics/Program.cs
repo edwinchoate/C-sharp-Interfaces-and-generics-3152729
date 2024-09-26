@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 
 namespace IntroGenerics
 {
@@ -13,8 +14,14 @@ namespace IntroGenerics
             arrList.Add(1);
             arrList.Add(2);
             arrList.Add(3);
+            // arrList.Add("four");
 
             // TODO: We can tell a Generic List what to hold
+            List<int> list = new List<int>();
+            list.Add(1);
+            list.Add(2);
+            list.Add(3);
+            // list.Add("four");
 
             foreach (int i in arrList) {
                 total += i;
