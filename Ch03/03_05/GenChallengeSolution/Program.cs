@@ -25,23 +25,46 @@ namespace GenChallengeSolution
             populateData(carList);
 
             // How many cars are in the collection?
-
+            Console.WriteLine("{0} cars", carList.Count);
 
             // How many Fords are there?
-
+            Console.WriteLine("{0} Fords", carList.FindAll((car) => car.m_Make == "Ford").Count);
 
             // What is the most valuable car?
 
+            int highestValue = 0;
+            ClassicCar mvc = null;
+            foreach (ClassicCar car in carList) 
+            {
+                if (car.m_Value > highestValue)
+                {
+                    highestValue = car.m_Value;
+                    mvc = car;
+                }
+            }
+            Console.WriteLine($"Most valuable: {mvc.m_Year} {mvc.m_Make} {mvc.m_Model}");
+            
+            // carList.Sort((car1, car2) => car2.m_Value.CompareTo(car1.m_Value));
+            // ClassicCar mvc = carList[0];
+            // Console.WriteLine($"Most valuable: {mvc.m_Year} {mvc.m_Make} {mvc.m_Model}");
 
             // What is the entire collection worth?
-
+            int totalWorth = 0;
+            carList.ForEach((car) => totalWorth += car.m_Value);
+            Console.WriteLine("Total collection value: {0}", totalWorth);
 
             // How many unique manufacturers are there?
+            List<string> uniqueMakes = new List<string>();
+            foreach (ClassicCar car in carList) 
+            {
+                if (!uniqueMakes.Contains(car.m_Make))
+                    uniqueMakes.Add(car.m_Make);
+            }
+            Console.WriteLine("{0} unique manufacturers", uniqueMakes.Count);
 
 
-
-            Console.WriteLine("\nHit Enter key to continue...");
-            Console.ReadLine();
+            // Console.WriteLine("\nHit Enter key to continue...");
+            // Console.ReadLine();
         }
 
         static void populateData(List<ClassicCar> theList) {
