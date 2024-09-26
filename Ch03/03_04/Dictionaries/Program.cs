@@ -16,15 +16,32 @@ namespace Dictionaries
             fileTypes.Add(".xml", "XML Data");
 
             // TODO: How many key/value pairs are there?
+            Console.WriteLine(fileTypes.Count);
 
             // TODO: try adding an existing key
+            try 
+            {
+                fileTypes.Add(".txt", "Text File 2");
+            }
+            catch (ArgumentException e) 
+            {
+                Console.WriteLine("That key is already in the dictionary");
+            }
 
             // TODO: try removing and then finding a key
+            fileTypes.Remove(".txt");
+            Console.WriteLine("Is .txt in the fileTypes? {0}", fileTypes.ContainsKey(".txt"));
 
-            // TODO: Dump the contents of the Dictionary
+            Console.WriteLine();
 
-            Console.WriteLine("\nHit Enter to continue...");
-            Console.ReadLine();
+            // TODO: Print the contents of the Dictionary
+            foreach (KeyValuePair<string, string> kvp in fileTypes) 
+            {
+                Console.WriteLine("Key: {0}, Value: {0}", kvp.Key, kvp.Value);
+            }
+
+            // Console.WriteLine("\nHit Enter to continue...");
+            // Console.ReadLine();
         }
     }
 }

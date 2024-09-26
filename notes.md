@@ -258,3 +258,20 @@ Queues
 * `Enqueue` - adds a new item to the end of the queue
 * `Dequeue` - remove the front item from the queue
 
+### Dictionaries 
+
+* `Count`
+* `Clear`
+* `ContainsKey`
+* `ContainsValue`
+* `Add` - throws an exception if a given key already exists
+* `Remove`
+
+Working with key-value pairs:
+
+```C#
+foreach (KeyValuePair<int, string> kvp in myDict) {
+    int key = kvp.Key;
+    string value = kvp.Value;
+}
+```
