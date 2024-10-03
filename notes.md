@@ -217,7 +217,7 @@ people.Add(new Person("Bob", "Smith"));
 Get the length of the list: 
 
 ```C#
-int headcount = people.Count();
+int headcount = people.Count;
 ```
 
 See if an item is in the list:
@@ -270,8 +270,15 @@ Queues
 Working with key-value pairs:
 
 ```C#
-foreach (KeyValuePair<int, string> kvp in myDict) {
+foreach (KeyValuePair<int, string> kvp in myDict) 
+{
     int key = kvp.Key;
     string value = kvp.Value;
+}
+
+// Or,
+foreach (int key in myDict.Keys) 
+{
+    string value = myDict[key];
 }
 ```
